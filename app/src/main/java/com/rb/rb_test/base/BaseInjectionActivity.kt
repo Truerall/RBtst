@@ -13,8 +13,8 @@ abstract class BaseInjectionActivity : AppCompatActivity(), HasSupportFragmentIn
     internal lateinit var fragmentInjector: DispatchingAndroidInjector<Fragment>
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         AndroidInjection.inject(this)
+        super.onCreate(savedInstanceState)
     }
 
     override fun supportFragmentInjector(): DispatchingAndroidInjector<Fragment> {

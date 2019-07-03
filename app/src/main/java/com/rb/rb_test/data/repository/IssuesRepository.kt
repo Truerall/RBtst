@@ -7,9 +7,21 @@ import javax.inject.Inject
 
 class IssuesRepository @Inject constructor(private val csvParser: CSVParser) : IIssuesRepository {
 
+    var issuesList: List<Issue>? = null
+
+    override fun isDataAvailable(): Boolean {
+        return !issuesList.isNullOrEmpty()
+    }
+
     override fun getIssues(): Single<List<Issue>> {
-        return Single.fromCallable {
-            csvParser.parseFile("issues.csv")
+        return if (isDataAvailable()) {
+            Single.just(issuesList)
+        } else {
+            Single.fromCallable {
+                csvParser.parseFile("issues.csv")
+            }.doOnSuccess {
+                issuesList = it
+            }
         }
     }
 }

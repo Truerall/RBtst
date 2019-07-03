@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import javax.inject.Inject
 
-abstract class BaseVMFragment<T : BaseViewModel> : BaseInjectionFragment() {
+abstract class BaseVMFragment<T : IBaseViewModel> : BaseInjectionFragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory

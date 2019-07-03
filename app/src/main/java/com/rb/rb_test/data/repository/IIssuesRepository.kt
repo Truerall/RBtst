@@ -5,4 +5,5 @@ import io.reactivex.Single
 
 interface IIssuesRepository {
     fun getIssues() : Single<List<Issue>>
+    fun isDataAvailable() : Boolean
 }
