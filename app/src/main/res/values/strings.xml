@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">rb-test</string>
+    <string name="tv_label_first_name">First name</string>
+    <string name="tv_label_sur_name">Sur name</string>
+    <string name="tv_label_issue_cnt">Issue count</string>
+    <string name="tv_label_birth_date">Birth date</string>
+
+    <string name="dm_tv_data_first_name">Oleksii</string>
+    <string name="dm_tv_data_sur_name">Kriukov</string>
+    <string name="dm_tv_data_issue_cnt">0</string>
+    <string name="dm_tv_data_birth_date">01_02_2222</string>
 </resources>
