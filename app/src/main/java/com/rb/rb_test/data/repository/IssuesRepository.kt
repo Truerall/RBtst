@@ -1,6 +1,5 @@
 package com.rb.rb_test.data.repository
 
-import android.util.Log
 import com.rb.rb_test.data.model.Issue
 import com.rb.rb_test.utils.parsers.CSVParser
 import io.reactivex.Single
@@ -10,13 +9,7 @@ class IssuesRepository @Inject constructor(private val csvParser: CSVParser) : I
 
     override fun getIssues(): Single<List<Issue>> {
         return Single.fromCallable {
-                parseCSV()
+            csvParser.parseFile("issues.csv")
         }
     }
-
-    private fun parseCSV(): List<Issue> {
-        Log.d("fff","fff issues csv parser> "+ csvParser.testText)
-        return emptyList<Issue>()
-    }
-
 }
