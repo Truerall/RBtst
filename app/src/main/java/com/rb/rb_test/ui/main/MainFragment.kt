@@ -5,21 +5,23 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.rb.rb_test.R
-import com.rb.rb_test.ui.base.BaseInjectionFragment
+import com.rb.rb_test.base.BaseInjectionFragment
+import com.rb.rb_test.base.BaseVMFragment
+import com.rb.rb_test.base.BaseViewModel
 import com.rb.rb_test.utils.parsers.CSVParser
 import javax.inject.Inject
 
-class MainFragment : BaseInjectionFragment() {
+class MainFragment : BaseVMFragment<MainViewModel>() {
 
-    @Inject lateinit var csvParser: CSVParser
+    override val modelClass: Class<out BaseViewModel>
+        get() = MainViewModel::class.java
+
     companion object {
         fun newInstance() = MainFragment()
     }
-
-    private lateinit var viewModel: MainViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -29,8 +31,6 @@ class MainFragment : BaseInjectionFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        Log.d("fff","fff csv parser> "+ csvParser.testText)
-        // TODO: Use the ViewModel
+        viewModel.test()
     }
 }

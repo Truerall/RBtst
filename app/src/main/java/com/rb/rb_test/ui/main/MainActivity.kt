@@ -1,9 +1,8 @@
 package com.rb.rb_test.ui.main
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.rb.rb_test.R
-import com.rb.rb_test.ui.base.BaseInjectionActivity
+import com.rb.rb_test.base.BaseInjectionActivity
 
 class MainActivity : BaseInjectionActivity() {
 

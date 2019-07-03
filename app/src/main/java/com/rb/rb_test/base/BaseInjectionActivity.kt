@@ -1,4 +1,4 @@
-package com.rb.rb_test.ui.base
+package com.rb.rb_test.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

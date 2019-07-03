@@ -7,7 +7,7 @@ import javax.inject.Singleton
 
 
 @Module
-class MUAppProviderModule {
+class RBAppProviderModule {
 
     @Provides
     @Singleton
